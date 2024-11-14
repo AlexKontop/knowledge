@@ -1,0 +1,369 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14/"
+     xml:base="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+<!-- Σχέση: "ΑΝΗΚΕΙ ΣΕ ΚΛΙΝΙΚΗ" -->
+<!-- Αυτή η ιδιότητα συνδέει ΙΑΤΡΟΣ ή ΝΟΣΗΛΕΥΤΗΣ με μια ΚΛΙΝΙΚΗ -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΝΗΚΕΙ_ΣΕ_ΚΛΙΝΙΚΗ">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΙΑΤΡΟΣ"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΝΟΣΗΛΕΥΤΗΣ"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΚΛΙΝΙΚΗ"/>
+    </owl:ObjectProperty>
+    
+
+<!-- Σχέση: "ΑΠΑΙΤΕΙ ΠΑΡΑΚΟΛΟΥΘΗΣΗ" -->
+    <!-- Αυτή η ιδιότητα συνδέει ΑΣΘΕΝΗΣ με μια συγκεκριμένη κλινική -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΠΑΙΤΕΙ_ΠΑΡΑΚΟΛΟΥΘΗΣΗ">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΣΘΕΝΗΣ"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΚΛΙΝΙΚΗ_ΕΠΕΙΓΟΝΤΩΝ"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΟΡΘΟΠEΔΙΚΗ_ΚΛΙΝΙΚΗ"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΠΑΙΔΙΑΤΡΙΚΗ_ΚΛΙΝΙΚΗ"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΧΕΙΡΟΥΡΓΙΚΗ_ΚΛΙΝΙΚΗ"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+    <!-- Σχέση: "ΕΙΔΙΚΕΥΕΤΑΙ ΣΕ" -->
+    <!-- Αυτή η ιδιότητα περιγράφει την ειδικότητα ενός ΙΑΤΡΟΣ -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΕΙΔΙΚΕΥΕΤΑΙ_ΣΕ">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΙΑΤΡΟΣ"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΚΤΙΝΟΛΟΓΟΣ"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΚΑΡΔΙΟΛΟΓΟΣ"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΠΑΘΟΛΟΓΟΣ"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΧΕΙΡΟΥΡΓΟΣ"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+<!-- Ορισμός της ιδιότητας "ΕΧΕΙ_ΘΕΡΑΠΕΙΑ", που συνδέει τον ασθενή με μια συγκεκριμένη θεραπεία. -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΕΧΕΙ_ΘΕΡΑΠΕΙΑ">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΣΘΕΝΗΣ"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΚΤΙΝΟΛΟΓΙΚΗ_ΘΕΡΑΠΕΙΑ"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΚΑΡΔΙΟΛΟΓΙΚΗ_ΘΕΡΑΠΕΙΑ"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΠΑΘΟΛΟΓΙΚΗ_ΘΕΡΑΠΕΙΑ"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΧΕΙΡΟΥΡΓΙΚΗ_ΘΕΡΑΠΕΙΑ"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+<!-- Ορισμός της ιδιότητας "ΕΧΕΙ_ΙΑΤΡΙΚΟ_ΙΣΤΟΡΙΚΟ", που συνδέει τον ασθενή με ένα στοιχείο ιατρικού ιστορικού. -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΕΧΕΙ_ΙΑΤΡΙΚΟ_ΙΣΤΟΡΙΚΟ">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΣΘΕΝΗΣ"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΛΛΕΡΓΙΕΣ"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΣΘΕΝΕΙΕΣ_ΣΤΟ_ΠΑΡΕΛΘΟΝ"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΧΕΙΡΟΥΡΓΙΚΕΣ_ΕΠΕΜΒΑΣΕΙΣ"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΧΡΗΣΗ_ΦΑΡΜΑΚΩΝ"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+<!-- Ορισμός της ιδιότητας "ΠΑΡΕΧΕΙ_ΘΕΡΑΠΕΙΑ", που συνδέει έναν ΙΑΤΡΟΣ με μία θεραπεία -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΠΑΡΕΧΕΙ_ΘΕΡΑΠΕΙΑ">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΙΑΤΡΟΣ"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΘΕΡΑΠΕΙΑ"/>
+    </owl:ObjectProperty>
+    
+
+<!-- Ορισμός της ιδιότητας "ΦΡΟΝΤΙΖΕΤΑΙ_ΑΠΟ", που συνδέει έναν ασθενή με έναν νοσηλευτή που τον φροντίζει -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΦΡΟΝΤΙΖΕΤΑΙ_ΑΠΟ">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΣΘΕΝΗΣ"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΝΟΣΗΛΕΥΤΗΣ"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+ <!-- Η κλάση "ΑΚΤΙΝΟΛΟΓΙΚΗ_ΘΕΡΑΠΕΙΑ" επεκτείνει την κλάση "ΘΕΡΑΠΕΙΑ". Δηλώνει ότι η ακτινολογική θεραπεία είναι μια ειδική μορφή θεραπείας. -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΚΤΙΝΟΛΟΓΙΚΗ_ΘΕΡΑΠΕΙΑ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΘΕΡΑΠΕΙΑ"/>
+    </owl:Class>
+    
+
+<!-- Η κλάση "ΑΚΤΙΝΟΛΟΓΟΣ" επεκτείνει την κλάση "ΙΑΤΡΟΣ" και ο κάθε ακτινολόγος παρέχει θεραπεία τύπου "ΑΚΤΙΝΟΛΟΓΙΚΗ_ΘΕΡΑΠΕΙΑ". -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΚΤΙΝΟΛΟΓΟΣ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΙΑΤΡΟΣ"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΠΑΡΕΧΕΙ_ΘΕΡΑΠΕΙΑ"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΚΤΙΝΟΛΟΓΙΚΗ_ΘΕΡΑΠΕΙΑ"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+<!-- Η κλάση "ΑΛΛΕΡΓΙΕΣ" επεκτείνει την κλάση "ΙΑΤΡΙΚΟ_ΙΣΤΟΡΙΚΟ" και περιγράφει το ιατρικό ιστορικό που σχετίζεται με αλλεργίες. -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΛΛΕΡΓΙΕΣ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΙΑΤΡΙΚΟ_ΙΣΤΟΡΙΚΟ"/>
+    </owl:Class>
+    
+
+<!-- Η κλάση "ΑΣΘΕΝΕΙΕΣ_ΣΤΟ_ΠΑΡΕΛΘΟΝ" επεκτείνει την κλάση "ΙΑΤΡΙΚΟ_ΙΣΤΟΡΙΚΟ" και περιγράφει ασθένειες που ο ασθενής είχε στο παρελθόν. -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΣΘΕΝΕΙΕΣ_ΣΤΟ_ΠΑΡΕΛΘΟΝ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΙΑΤΡΙΚΟ_ΙΣΤΟΡΙΚΟ"/>
+    </owl:Class>
+    
+
+<!-- Ορισμός της κλάσης "ΑΣΘΕΝΗΣ", που αντιπροσωπεύει έναν ασθενή στην οντολογία. -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΣΘΕΝΗΣ"/>
+    
+
+<!-- Ορισμός της κλάσης "ΕΞΩΤΕΡΙΚΟΣ_ΑΣΘΕΝΗΣ", που επεκτείνει την κλάση "ΑΣΘΕΝΗΣ" και αναφέρεται σε ασθενείς που δεν είναι εσωτερικοί (δηλαδή, δεν νοσηλεύονται μέσα στο νοσοκομείο). -->
+<!-- Ο εξωτερικός ασθενής δεν μπορεί να απαιτεί νοσηλευτή σε μόνιμη βάση. -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΕΞΩΤΕΡΙΚΟΣ_ΑΣΘΕΝΗΣ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΣΘΕΝΗΣ"/>
+        <owl:disjointWith>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΦΡΟΝΤΙΖΕΤΑΙ_ΑΠΟ"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΝΟΣΗΛΕΥΤΗΣ"/>
+            </owl:Restriction>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+  <!-- Ορίζεται η κλάση ΕΣΩΤΕΡΙΚΟΣ_ΑΣΘΕΝΗΣ, η οποία είναι επίσης υποκλάση της κλάσης ΑΣΘΕΝΗΣ, αλλά αφορά ασθενείς που νοσηλεύονται εντός του νοσοκομείου. -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΕΣΩΤΕΡΙΚΟΣ_ΑΣΘΕΝΗΣ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΣΘΕΝΗΣ"/>
+    </owl:Class>
+    
+
+<!-- Ορισμός της κλάσης "ΘΕΡΑΠΕΙΑ". Αυτή η κλάση μπορεί να αναπαριστάνει οποιαδήποτε θεραπεία εντός του συστήματος. -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΘΕΡΑΠΕΙΑ"/>
+    
+
+<!-- Ορισμός της κλάσης "ΙΑΤΡΙΚΟ ΙΣΤΟΡΙΚΟ". Το ιστορικό υγείας ενός ΑΣΘΕΝΗ. -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΙΑΤΡΙΚΟ_ΙΣΤΟΡΙΚΟ"/>
+    
+
+<!-- Ορισμός της κλάσης "ΙΑΤΡΟΣ". Αντιπροσωπεύει έναν γενικό γιατρό στο σύστημα. -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΙΑΤΡΟΣ"/>
+    
+<!-- Ορισμός της κλάσης "ΚΑΡΔΙΟΛΟΓΙΚΗ ΘΕΡΑΠΕΙΑ". Αυτή η κλάση είναι υποκλάση της κλάσης "ΘΕΡΑΠΕΙΑ", πράγμα που σημαίνει ότι κάθε καρδιολογική θεραπεία είναι επίσης μια θεραπεία. -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΚΑΡΔΙΟΛΟΓΙΚΗ_ΘΕΡΑΠΕΙΑ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΘΕΡΑΠΕΙΑ"/>
+    </owl:Class>
+    
+<!-- Η κλάση "ΚΑΡΔΙΟΛΟΓΟΣ" είναι υποκλάση της κλάσης "ΙΑΤΡΟΣ" και ο κάθε καρδιολόγος παρέχει θεραπεία τύπου "ΚΑΡΔΙΟΛΟΓΙΚΗ_ΘΕΡΑΠΕΙΑ". -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΚΑΡΔΙΟΛΟΓΟΣ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΙΑΤΡΟΣ"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΠΑΡΕΧΕΙ_ΘΕΡΑΠΕΙΑ"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΚΑΡΔΙΟΛΟΓΙΚΗ_ΘΕΡΑΠΕΙΑ"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+ <!-- Ορισμός της κλάσης ΚΛΙΝΙΚΗ  -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΚΛΙΝΙΚΗ"/>
+    
+
+<!-- Ορισμός της κλάσης "ΚΛΙΝΙΚΗ_ΕΠΕΙΓΟΝΤΩΝ" που είναι υποκλάση της κλάσης "ΚΛΙΝΙΚΗ" -->
+<!-- Αυτή η κλάση αντιπροσωπεύει μια κλινική που ειδικεύεται σε επείγοντα περιστατικά -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΚΛΙΝΙΚΗ_ΕΠΕΙΓΟΝΤΩΝ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΚΛΙΝΙΚΗ"/>
+    </owl:Class>
+    
+
+<!-- Ορισμός της κλάσης "ΝΟΣΗΛΕΥΤΗΣ" , οι νοσηλευτές ανήκουν σε μια από τις κλινικές: ΚΛΙΝΙΚΗ_ΕΠΕΙΓΟΝΤΩΝ, ΟΡΘΟΠEΔΙΚΗ_ΚΛΙΝΙΚΗ, ΠΑΙΔΙΑΤΡΙΚΗ_ΚΛΙΝΙΚΗ, ΧΕΙΡΟΥΡΓΙΚΗ_ΚΛΙΝΙΚΗ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΝΟΣΗΛΕΥΤΗΣ">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΝΗΚΕΙ_ΣΕ_ΚΛΙΝΙΚΗ"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΚΛΙΝΙΚΗ_ΕΠΕΙΓΟΝΤΩΝ"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΟΡΘΟΠEΔΙΚΗ_ΚΛΙΝΙΚΗ"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΠΑΙΔΙΑΤΡΙΚΗ_ΚΛΙΝΙΚΗ"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΧΕΙΡΟΥΡΓΙΚΗ_ΚΛΙΝΙΚΗ"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+<!-- Ορισμός της κλάσης ΟΡΘΟΠEΔΙΚΗ_ΚΛΙΝΙΚΗ, η οποία είναι υποκλάση της ΚΛΙΝΙΚΗΣ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΟΡΘΟΠEΔΙΚΗ_ΚΛΙΝΙΚΗ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΚΛΙΝΙΚΗ"/>
+    </owl:Class>
+    
+
+<!-- Ορισμός της κλάσης ΠΑΘΟΛΟΓΙΚΗ_ΘΕΡΑΠΕΙΑ, η οποία είναι υποκλάση της ΘΕΡΑΠΕΙΑ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΠΑΘΟΛΟΓΙΚΗ_ΘΕΡΑΠΕΙΑ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΘΕΡΑΠΕΙΑ"/>
+    </owl:Class>
+    
+
+<!-- Η κλάση "ΠΑΘΟΛΟΓΟΣ" επεκτείνει την κλάση "ΙΑΤΡΟΣ" και ο κάθε παθολόγος παρέχει θεραπεία τύπου "ΠΑΘΟΛΟΓΙΚΗ_ΘΕΡΑΠΕΙΑ". -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΠΑΘΟΛΟΓΟΣ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΙΑΤΡΟΣ"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΠΑΡΕΧΕΙ_ΘΕΡΑΠΕΙΑ"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΠΑΘΟΛΟΓΙΚΗ_ΘΕΡΑΠΕΙΑ"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+<!-- Ορισμός της κλάσης 'ΠΑΙΔΙΑΤΡΙΚΗ ΚΛΙΝΙΚΗ' η οποία είναι υποκλάση της κλάσης 'ΚΛΙΝΙΚΗ'. 
+         Αυτό δείχνει ότι η παιδιατρική κλινική είναι ένα είδος κλινικής που εξειδικεύεται στις ανάγκες των παιδιών. -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΠΑΙΔΙΑΤΡΙΚΗ_ΚΛΙΝΙΚΗ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΚΛΙΝΙΚΗ"/>
+    </owl:Class>
+    
+
+
+    <!-- Ορισμός της κλάσης 'ΧΕΙΡΟΥΡΓΙΚΕΣ ΕΠΕΜΒΑΣΕΙΣ' η οποία είναι υποκλάση της κλάσης 'ΙΑΤΡΙΚΟ ΙΣΤΟΡΙΚΟ'. 
+         Αυτό σημαίνει ότι οι χειρουργικές επεμβάσεις αποτελούν ένα σημαντικό μέρος του ιατρικού ιστορικού ενός ασθενούς. -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΧΕΙΡΟΥΡΓΙΚΕΣ_ΕΠΕΜΒΑΣΕΙΣ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΙΑΤΡΙΚΟ_ΙΣΤΟΡΙΚΟ"/>
+    </owl:Class>
+    
+
+ <!-- Ορισμός της κλάσης 'ΧΕΙΡΟΥΡΓΙΚΗ ΘΕΡΑΠΕΙΑ' η οποία είναι υποκλάση της κλάσης 'ΘΕΡΑΠΕΙΑ'. 
+         Εδώ ορίζεται ότι η χειρουργική θεραπεία αποτελεί ένα είδος ιατρικής θεραπείας που περιλαμβάνει χειρουργικές μεθόδους. -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΧΕΙΡΟΥΡΓΙΚΗ_ΘΕΡΑΠΕΙΑ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΘΕΡΑΠΕΙΑ"/>
+    </owl:Class>
+    
+
+
+    <!-- Ορισμός της κλάσης 'ΧΕΙΡΟΥΡΓΙΚΗ ΚΛΙΝΙΚΗ' η οποία είναι υποκλάση της κλάσης 'ΚΛΙΝΙΚΗ'.  -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΧΕΙΡΟΥΡΓΙΚΗ_ΚΛΙΝΙΚΗ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΚΛΙΝΙΚΗ"/>
+    </owl:Class>
+    
+
+  <!--Η κλάση "ΧΕΙΡΟΥΡΓΟΣ" είναι υποκλάση της κλάσης "ΙΑΤΡΟΣ" και ο κάθε ΧΕΙΡΟΥΡΓΟΣ παρέχει θεραπεία τύπου "ΧΕΙΡΟΥΡΓΙΚΗ_ΘΕΡΑΠΕΙΑ". -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΧΕΙΡΟΥΡΓΟΣ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΙΑΤΡΟΣ"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΠΑΡΕΧΕΙ_ΘΕΡΑΠΕΙΑ"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΧΕΙΡΟΥΡΓΙΚΗ_ΘΕΡΑΠΕΙΑ"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Η κλάση ΧΡΗΣΗ_ΦΑΡΜΑΚΩΝ είναι υποκλάση της κλάσης ΙΑΤΡΙΚΟ_ΙΣΤΟΡΙΚΟ -->
+    <!-- Αυτό σημαίνει ότι κάθε χρήση φαρμάκων συνδέεται με το ιατρικό ιστορικό ενός ατόμου στην οντολογία -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΧΡΗΣΗ_ΦΑΡΜΑΚΩΝ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΙΑΤΡΙΚΟ_ΙΣΤΟΡΙΚΟ"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+ <!-- Δηλώνουμε ότι οι παρακάτω κλάσεις είναι απολύτως διακεκριμένες μεταξύ τους. -->
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΑΣΘΕΝΗΣ"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΙΑΤΡΟΣ"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alexk/ontologies/2024/10/untitled-ontology-14#ΝΟΣΗΛΕΥΤΗΣ"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
